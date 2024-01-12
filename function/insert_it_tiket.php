@@ -40,7 +40,7 @@ if (isset($_POST["add-tiket-admin"])) {
         $namaEmployee = 'Bapak/Ibu' . $id_nik_request; // Ganti dengan nama yang sesuai
         $link = 'https://eip.maagroup.co.id/tiket/index.php?page=ViewTicketIT&id=' . $id_tiket; // Ganti dengan URL yang valid
 
-        $message = "Halo " . $namaEmployee . "!\n\nTicketing dengan ID #" . $id_tiket . "Anda sudah berhasil dibuat dengan status 'Process'\n\nTerima kasih telah menggunakan layanan kami. Jangan lupa untuk selalu cek Employee Information Portal (EIP) untuk informasi selanjutnya. Jika Anda memiliki pertanyaan lebih lanjut atau membutuhkan bantuan, jangan ragu untuk menghubungi tim IT kami.\n\nTerima kasih!\n\nInfo lebih lanjut tentang tiket ini:" 
+        $message = "Halo " . $namaEmployee . "!\n\nTicketing dengan ID #" . $id_tiket . "Anda sudah berhasil dibuat dengan status 'Created'\n\nTerima kasih telah menggunakan layanan kami. Jangan lupa untuk selalu cek Employee Information Portal (EIP) untuk informasi selanjutnya. Jika Anda memiliki pertanyaan lebih lanjut atau membutuhkan bantuan, jangan ragu untuk menghubungi tim IT kami.\n\nTerima kasih!\n\nInfo lebih lanjut tentang tiket ini:" 
         . $link;
 
         // Pengaturan untuk cURL
@@ -95,7 +95,7 @@ if (isset($_POST["add-tiket-admin"])) {
                 $namaEmployee = 'Bapak/Ibu'; // Ganti dengan nama yang sesuai
                 $link = 'https://eip.maagroup.co.id/tiket/index.php?page=ViewTicketIT&id=' . $id_tiket; // Ganti dengan URL yang valid
 
-                $message = "Halo " . $namaEmployee . "!\n\nTicketing dengan ID #" . $id_tiket . " Anda sudah berhasil dibuat dengan status 'Process'\n\nTerima kasih telah menggunakan layanan kami. Jangan lupa untuk selalu cek Employee Information Portal (EIP) untuk informasi selanjutnya. Jika Anda memiliki pertanyaan lebih lanjut atau membutuhkan bantuan, jangan ragu untuk menghubungi tim IT kami.\n\nTerima kasih!\n\nInfo lebih lanjut tentang tiket ini: " . $link;
+                $message = "Halo " . $namaEmployee . "!\n\nTicketing dengan ID #" . $id_tiket . " Anda sudah berhasil dibuat dengan status 'Created'\n\nTerima kasih telah menggunakan layanan kami. Jangan lupa untuk selalu cek Employee Information Portal (EIP) untuk informasi selanjutnya. Jika Anda memiliki pertanyaan lebih lanjut atau membutuhkan bantuan, jangan ragu untuk menghubungi tim IT kami.\n\nTerima kasih!\n\nInfo lebih lanjut tentang tiket ini: " . $link;
 
                 // Pengaturan untuk cURL
                 $curl = curl_init();
@@ -163,9 +163,7 @@ if (isset($_POST["add-tiket-admin"])) {
     $id_nik_request = $_POST["id_nik_request"];
     $description = $_POST["description"];
     $whatsapp = $_POST["wa"];
-    $status_tiket = 'Process';
-
-
+    $status_tiket = 'Created';
 
     $ekstensi_diperbolehkan = array('pdf', 'xlsx', 'xls', 'doc', 'docx', 'jpg', 'png', 'jpeg');
     $nama_lampiran1 = $_FILES['lampiran1']['name'];
@@ -185,7 +183,7 @@ if (isset($_POST["add-tiket-admin"])) {
         $namaEmployee = 'Bapak/Ibu'; // Ganti dengan nama yang sesuai
         $link = 'https://eip.maagroup.co.id/tiket/index.php?page=ViewTicketIT&id=' . $id_tiket; // Ganti dengan URL yang valid
 
-        $message = "Halo " . $namaEmployee . "!\n\nTicketing dengan ID #" . $id_tiket . " Anda sudah berhasil dibuat dengan status 'Process'\n\nTerima kasih telah menggunakan layanan kami. Jangan lupa untuk selalu cek Employee Information Portal (EIP) untuk informasi selanjutnya. Jika Anda memiliki pertanyaan lebih lanjut atau membutuhkan bantuan, jangan ragu untuk menghubungi tim IT kami.\n\nTerima kasih!\n\nInfo lebih lanjut tentang tiket ini: " . $link;
+        $message = "Halo " . $namaEmployee . "!\n\nTicketing dengan ID #" . $id_tiket . " Anda sudah berhasil dibuat dengan status 'Created'\n\nTerima kasih telah menggunakan layanan kami. Jangan lupa untuk selalu cek Employee Information Portal (EIP) untuk informasi selanjutnya. Jika Anda memiliki pertanyaan lebih lanjut atau membutuhkan bantuan, jangan ragu untuk menghubungi tim IT kami.\n\nTerima kasih!\n\nInfo lebih lanjut tentang tiket ini: " . $link;
 
         // Pengaturan untuk cURL
         $curl = curl_init();

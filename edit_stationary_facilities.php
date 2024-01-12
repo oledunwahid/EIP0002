@@ -134,6 +134,7 @@ $id_tiket1 = $_GET['id'];
                                 <th>ID Ticket</th>
                                 <th>ID ATK</th>
                                 <th>Deskripsi</th>
+                                <th>Remarks Items</th>
                                 <th>Total Request</th>
                                 <th>Total Approve</th>
                                 <th>Feedback</th>
@@ -162,12 +163,13 @@ $id_tiket1 = $_GET['id'];
                                         <td><?= $row6['id_request_detail'] ?></td>
                                         <td><?= $row6['id_atk'] ?></td>
                                         <td><?= $row6['description'] ?></td>
+                                        <td><?= $row6['remarks_atk'] ?></td>
                                         <td><?= $row6['total_request'] ?></td>
                                         <td><?= $row6['total_approve'] ?></td>
                                         <td><?= $row6['feedback'] ?></td>
                                         <td>
                                             <div>
-                                                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showModal" data-request-id="<?= $row6['id_request_detail'] ?>">Edit</button>
+                                                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showModal<?= $row6['id_request_detail'] ?>">Edit</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -288,7 +290,7 @@ while ($row_modal = mysqli_fetch_assoc($result_modal)) {
                 <div class="modal-header p-3 bg-soft-info">
                     <h5 class="modal-title" id="exampleModalLabel">
                         Edit Total Approve and Feedback - ATK / Stationary</h5>
-                    <?= $row_modal['description'] ?>
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
                 </div>
                 <form action="function/insert_ga_stationary.php" method="POST" enctype="multipart/form-data">

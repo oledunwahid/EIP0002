@@ -21,8 +21,8 @@ if (isset($_POST["add-stationary"])) {
     $start_date = $_POST["startDate"];
 
     // Example of using arrays for multiple values
-    $idATK = array($_POST["idATK1"], $_POST["idATK2"], $_POST["idATK3"], $_POST["idATK4"], $_POST["idATK5"]);
-    $totalReq = array($_POST["totalReq1"], $_POST["totalReq2"], $_POST["totalReq3"], $_POST["totalReq4"], $_POST["totalReq5"]);
+    $idATK = array($_POST["idATK1"], $_POST["idATK2"], $_POST["idATK3"], $_POST["idATK4"], $_POST["idATK5"], $_POST["idATK6"]);
+    $totalReq = array($_POST["totalReq1"], $_POST["totalReq2"], $_POST["totalReq3"], $_POST["totalReq4"], $_POST["totalReq5"], $_POST["totalReq6"]);
 
     // Insert ga_stationary
     $query = "INSERT INTO ga_stationary VALUES ('$id_ga_stationary', '$nik_request', '$nama_pic', '$whatsapp', '$category', 'Pending', '$start_date', '')";
@@ -65,16 +65,20 @@ if (isset($_POST["add-stationary"])) {
         // Insert into stationary_request_detail for each item
         foreach ($idATK as $key => $value) {
             // Generate a unique ID for each detail entry
-            $detail_id = generateTimestampedID("ARD", $key + 1); // Use $key as part of the ID generation
+            $key = 5; // Process only the sixth item
+            $value = $idATK[$key];
 
-            $query2 = "INSERT INTO atk_detail_request VALUES ('$detail_id', '$id_ga_stationary', '$value', '$totalReq[$key]', '', '')";
+            // Generate a unique ID for the detail entry
+            $detail_id = generateTimestampedID("ARD", $key + 1);
+            $remarks = mysqli_real_escape_string($koneksi, $_POST["remarks6"]);
+
+            $query2 = "INSERT INTO atk_detail_request VALUES ('$detail_id', '$id_ga_stationary', '$value','$remarks', '$totalReq[$key]', '', '')";
             $kondisi2 = mysqli_query($koneksi, $query2);
 
             // Handle errors or further processing if needed
             if (!$kondisi2) {
                 // Additional processing for failure
                 echo "Error: " . mysqli_error($koneksi);
-                // You can choose to break the loop, log the error, or perform other actions
                 break;
             }
         }

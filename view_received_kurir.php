@@ -131,7 +131,7 @@ $timestamp = $dateTime->format('Y-m-d H:i:s');
                                                     </div>
                                                     <div class="flex-grow-1 ms-3">
                                                         <h6 class="fs-14 mb-0 fw-semibold">
-                                                            <?= $row2['status_riwayat'] ?> -
+                                                            <?= $row2['status_riwayat_received'] ?> -
                                                             <span class="fw-semibold"><?= date('l, j F Y g:i A', strtotime($row2["timestamp"])) ?>
                                                             </span>
                                                         </h6>
@@ -187,7 +187,7 @@ $timestamp = $dateTime->format('Y-m-d H:i:s');
                                         <td><?= $row['divisi'] ?></td>
                                     </tr>
                                     <tr>
-                                        <td class="fw-medium">Office Location/td>
+                                        <td class="fw-medium">Office Location</td>
                                         <td><?= $row['lokasi'] ?></td>
                                     </tr>
                                     <tr>
@@ -204,6 +204,53 @@ $timestamp = $dateTime->format('Y-m-d H:i:s');
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="card-title fw-semibold mb-0">Files Attachment</h6>
+                    </div>
+                    <?php
+                    $file = "file/facilities/" . $row['bukti_foto'];
+                    $filesize = filesize($file);
+                    if ($filesize >= 1024 * 1024) {
+                        $filesize = number_format($filesize / (1024 * 1024), 2) . ' MB';
+                    } elseif ($filesize >= 1024) {
+                        $filesize = number_format($filesize / 1024, 2) . ' KB';
+                    } else {
+                        $filesize = $filesize . ' bytes';
+                    }
+                    ?>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center border border-dashed p-2 rounded">
+                            <div class="flex-shrink-0 avatar-sm">
+                                <div class="avatar-title bg-light rounded">
+                                    <?php
+                                    $file_extension = pathinfo($row['bukti_foto'], PATHINFO_EXTENSION);
+                                    if ($file_extension === 'jpg' || $file_extension === 'jpeg' || $file_extension === 'png') {
+                                        echo '<i class="ri-image-line fs-20 text-primary"></i>';
+                                    } elseif ($file_extension === 'pdf') {
+                                        echo '<i class="ri-file-pdf-line fs-20 text-danger"></i>';
+                                    } else {
+                                        echo '<i class="ri-file-zip-line fs-20 text-primary"></i>';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            <?php if ($row['bukti_foto']) : ?>
+                                <div class="flex-grow-1 ms-3">
+                                    <a href="file/it/<?= $row['bukti_foto'] ?>" class="download-link">
+                                        <i class="mb-1 ri-download-2-line"></i> <?= $row['bukti_foto'] ?>
+                                        <small class="text-muted">(<?= $filesize ?>)</small>
+                                    </a>
+                                </div>
+                            <?php else : ?>
+                                <div class="flex-grow-1 ms-3 mt-3 alert alert-info" role="alert">
+                                    <i class="fa fa-info-circle me-2"></i>
+                                    No files uploaded.
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

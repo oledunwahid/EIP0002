@@ -307,7 +307,7 @@
                                             <!-- Select item ATK 1 -->
                                             <div class="row">
                                                 <div class="col-md-9 mb-3">
-                                                    <label for="atkSelect" class="form-label"><span> Select Item </span></label>
+                                                    <label for="atkSelect" class="form-label"><span> Select Item 1</span></label>
                                                     <select class="form-control" data-choices name="idATK1">
                                                         <option value="">Select ATK/Stationary</option>
                                                         <?php
@@ -324,7 +324,7 @@
                                                             <h5 class="fs-13 fw-medium text-muted">Qty</h5>
                                                             <div class="input-step light">
                                                                 <button type="button" class="minus">–</button>
-                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq1" readonly>
+                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq1" id="quantityInput">
                                                                 <button type="button" class="plus">+</button>
                                                             </div>
                                                         </div>
@@ -335,7 +335,7 @@
                                             <!-- Select item ATK 2 -->
                                             <div class="row">
                                                 <div class="col-md-9 mb-3">
-                                                    <label for="atkSelect" class="form-label"><span> Select Item </span></label>
+                                                    <label for="atkSelect" class="form-label"><span> Select Item 2</span></label>
                                                     <select class="form-control" data-choices name="idATK2">
                                                         <option value="">Select ATK/Stationary</option>
                                                         <?php
@@ -352,7 +352,7 @@
                                                             <h5 class="fs-13 fw-medium text-muted">Qty</h5>
                                                             <div class="input-step light">
                                                                 <button type="button" class="minus">–</button>
-                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq2" readonly>
+                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq2" id="quantityInput2">
                                                                 <button type="button" class="plus">+</button>
                                                             </div>
                                                         </div>
@@ -363,7 +363,7 @@
                                             <!-- Select item ATK 3 -->
                                             <div class="row">
                                                 <div class="col-md-9 mb-3">
-                                                    <label for="atkSelect" class="form-label"><span> Select Item </span></label>
+                                                    <label for="atkSelect" class="form-label"><span> Select Item 3</span></label>
                                                     <select class="form-control" data-choices name="idATK3">
                                                         <option value="">Select ATK/Stationary</option>
                                                         <?php
@@ -380,7 +380,7 @@
                                                             <h5 class="fs-13 fw-medium text-muted">Qty</h5>
                                                             <div class="input-step light">
                                                                 <button type="button" class="minus">–</button>
-                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq3" readonly>
+                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq3" id="quantityInput3">
                                                                 <button type="button" class="plus">+</button>
                                                             </div>
                                                         </div>
@@ -391,7 +391,7 @@
                                             <!-- Select item ATK 4 -->
                                             <div class="row">
                                                 <div class="col-md-9 mb-3">
-                                                    <label for="atkSelect" class="form-label"><span> Select Item </span></label>
+                                                    <label for="atkSelect" class="form-label"><span> Select Item 4</span></label>
                                                     <select class="form-control" data-choices name="idATK4">
                                                         <option value="">Select ATK/Stationary</option>
                                                         <?php
@@ -408,7 +408,7 @@
                                                             <h5 class="fs-13 fw-medium text-muted">Qty</h5>
                                                             <div class="input-step light">
                                                                 <button type="button" class="minus">–</button>
-                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq4" readonly>
+                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq4" id="quantityInput4">
                                                                 <button type="button" class="plus">+</button>
                                                             </div>
                                                         </div>
@@ -419,7 +419,7 @@
                                             <!-- Select item ATK 5 -->
                                             <div class="row">
                                                 <div class="col-md-9 mb-3">
-                                                    <label for="atkSelect" class="form-label"><span> Select Item </span></label>
+                                                    <label for="atkSelect" class="form-label"><span> Select Item 5</span></label>
                                                     <select class="form-control" data-choices name="idATK5">
                                                         <option value="">Select ATK/Stationary</option>
                                                         <?php
@@ -436,7 +436,31 @@
                                                             <h5 class="fs-13 fw-medium text-muted">Qty</h5>
                                                             <div class="input-step light">
                                                                 <button type="button" class="minus">–</button>
-                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq5" readonly>
+                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq5" id="quantityInput5">
+                                                                <button type="button" class="plus">+</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- If the item is not available -->
+                                            <div class="row">
+                                                <label for="atkSelect" class="form-label"><span>If the item is not available, ID :</span></label>
+                                                <div class="col-md-3 mb-3">
+                                                    <input type="text" class="form-control" value="NONATK10001" readonly name="idATK6" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="request" class="form-label">If the item is not available, write it here!</label>
+                                                    <input type="text" id="remarks6" class="form-control" placeholder="Write here if the item is not available" name="remarks6" />
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="col-sm-5">
+                                                        <div>
+                                                            <h5 class="fs-13 fw-medium text-muted">Qty</h5>
+                                                            <div class="input-step light">
+                                                                <button type="button" class="minus">–</button>
+                                                                <input type="number" class="product-quantity" value="0" min="0" max="100" name="totalReq6" id="quantityInput6">
                                                                 <button type="button" class="plus">+</button>
                                                             </div>
                                                         </div>
@@ -509,7 +533,9 @@
             scrollX: true,
             scrollY: 400,
             scrollCollapse: !0,
-            order: [[2,'desc']],
+            order: [
+                [2, 'desc']
+            ],
 
             lengthMenu: [
                 [5, 10, 25, 50, 100, -1],
@@ -530,6 +556,85 @@
             ],
 
             deferRender: true
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var quantityInput = document.getElementById('quantityInput');
+
+        quantityInput.addEventListener('input', function() {
+            // Batasi nilai maksimum ke 100
+            if (parseInt(quantityInput.value) > 100) {
+                quantityInput.value = '100';
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var quantityInput = document.getElementById('quantityInput2');
+
+        quantityInput.addEventListener('input', function() {
+            // Batasi nilai maksimum ke 100
+            if (parseInt(quantityInput.value) > 100) {
+                quantityInput.value = '100';
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var quantityInput = document.getElementById('quantityInput3');
+
+        quantityInput.addEventListener('input', function() {
+            // Batasi nilai maksimum ke 100
+            if (parseInt(quantityInput.value) > 100) {
+                quantityInput.value = '100';
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var quantityInput = document.getElementById('quantityInput4');
+
+        quantityInput.addEventListener('input', function() {
+            // Batasi nilai maksimum ke 100
+            if (parseInt(quantityInput.value) > 100) {
+                quantityInput.value = '100';
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var quantityInput = document.getElementById('quantityInput5');
+
+        quantityInput.addEventListener('input', function() {
+            // Batasi nilai maksimum ke 100
+            if (parseInt(quantityInput.value) > 100) {
+                quantityInput.value = '100';
+            }
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var quantityInput = document.getElementById('quantityInput6');
+
+        quantityInput.addEventListener('input', function() {
+            // Batasi nilai maksimum ke 100
+            if (parseInt(quantityInput.value) > 100) {
+                quantityInput.value = '100';
+            }
         });
     });
 </script>

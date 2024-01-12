@@ -70,9 +70,21 @@ $lokasi = $row7['lokasi'] ;
                                                 <div class="mb-6">
                                                     <div class="me-2 form-label text-muted"><span>Status:</span></div>
                                                     <div>
+                                                        <?php if($row['status_tiket'] == 'Created'){ ?>
+                                                                <select class="form-control" data-choices name="status_tiket">
+                                                                <?php
+                                                                $statusOptions = ['Process', 'Reject'];
+    
+                                                                foreach ($statusOptions as $option) {
+                                                                    $selected = ($option === $row['status_tiket']) ? 'selected' : '';
+                                                                    echo '<option value="' . $option . '" ' . $selected . '>' . $option . '</option>';
+                                                                }
+                                                                ?>
+                                                            </select> <?php 
+                                                        }else {  ?>
                                                         <select class="form-control" data-choices name="status_tiket">
                                                             <?php
-                                                            $statusOptions = ['Closed', 'Process', 'Reject'];
+                                                            $statusOptions = ['Closed','Reject'];
 
                                                             foreach ($statusOptions as $option) {
                                                                 $selected = ($option === $row['status_tiket']) ? 'selected' : '';
@@ -80,6 +92,7 @@ $lokasi = $row7['lokasi'] ;
                                                             }
                                                             ?>
                                                         </select>
+                                                        <?php }?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -90,7 +103,7 @@ $lokasi = $row7['lokasi'] ;
                                                     <label for="choices-single-default" class="form-label text-muted"><span>Request Type :</span></label>
                                                     <select class="form-control" data-choices name="kategori_tiket">
                                                         <?php
-                                                        $statusOptions = ['Cloud Storage', 'Email', 'Hardware', 'Network', 'Printer & Scanner', 'Software', 'Documentation', 'Infrastructure', 'License/Agreement'];
+                                                        $statusOptions = ['Cloud Storage', 'Email', 'Hardware', 'Network', 'Printer & Scanner', 'Software', 'Documentation', 'Infrastructure', 'License/Agreement', 'Microsoft365'];
                                                         foreach ($statusOptions as $option) {
                                                             $selected = ($option === $row['kategori_tiket']) ? 'selected' : '';
                                                             echo '<option value="' . $option . '" ' . $selected . '>' . $option . '</option>';

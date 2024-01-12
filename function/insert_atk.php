@@ -1,5 +1,5 @@
 <?php
-require_once("../koneksi.php");
+require_once("../../koneksi.php");
 
 if (isset($_POST["add-atk"])) {
     $id_atk = $_POST["id_atk"];

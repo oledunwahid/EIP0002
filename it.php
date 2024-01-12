@@ -99,25 +99,25 @@
             </div>
             <!--end col-->
 
-            <!-- (Pending, Closed, Process) -->
+            <!-- (Created, Closed, Process) -->
             <div class="col-xxl-3 col-sm-6">
                 <div class="card card-animate">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <p class="fw-medium text-muted mb-0">Pending Tickets</p>
+                                <p class="fw-medium text-muted mb-0">Created Tickets</p>
                                 <?php if (isset($row7['admin']) && ($row7['admin'] == '1')) {
-                                    $sql1 = mysqli_query($koneksi, "SELECT id_tiket FROM ticketing WHERE status_tiket = 'Pending' ");
-                                    $PendingTiket = mysqli_num_rows($sql1);
+                                    $sql1 = mysqli_query($koneksi, "SELECT id_tiket FROM ticketing WHERE status_tiket = 'Created' ");
+                                    $CreatedTiket = mysqli_num_rows($sql1);
                                 } elseif (isset($row7['it']) && ($row7['it'] == '1')) {
-                                    $sql1 = mysqli_query($koneksi, "SELECT ticketing.id_tiket, user.lokasi FROM ticketing INNER JOIN user ON ticketing.id_nik_request = user.idnik  WHERE status_tiket = 'Pending' AND user.lokasi IN ($lokasi) ");
-                                    $PendingTiket = mysqli_num_rows($sql1);
+                                    $sql1 = mysqli_query($koneksi, "SELECT ticketing.id_tiket, user.lokasi FROM ticketing INNER JOIN user ON ticketing.id_nik_request = user.idnik  WHERE status_tiket = 'Created' AND user.lokasi IN ($lokasi) ");
+                                    $CreatedTiket = mysqli_num_rows($sql1);
                                 } else {
-                                    $sql1 = mysqli_query($koneksi, "SELECT id_tiket FROM ticketing WHERE status_tiket = 'Pending' AND id_nik_request='$niklogin' ");
-                                    $PendingTiket = mysqli_num_rows($sql1);
+                                    $sql1 = mysqli_query($koneksi, "SELECT id_tiket FROM ticketing WHERE status_tiket = 'Created' AND id_nik_request='$niklogin' ");
+                                    $CreatedTiket = mysqli_num_rows($sql1);
                                 }
                                 ?>
-                                <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="<?= $PendingTiket ?>">0</span></h2>
+                                <h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value" data-target="<?= $CreatedTiket ?>">0</span></h2>
                             </div>
                             <div>
                                 <div class="avatar-sm flex-shrink-0">
@@ -458,7 +458,7 @@
 
                                         <div>
                                             <label for="wa" class="form-label">No.Whatsapp</label>
-                                            <input type="number" class="form-control" placeholder="Insert your active number +(62) " name="wa" required />
+                                            <input type="number" class="form-control" placeholder="Insert your active number! (08xxxxxxxx) " name="wa" required />
                                         </div>
 
                                         <!-- Select user -->

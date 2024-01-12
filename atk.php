@@ -75,7 +75,7 @@
                 <h5 class="modal-title" id="exampleModalLabel">Add ATK</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
             </div>
-            <form action="function/insert_atk.php" method="POST">
+            <form action="facilities/function/insert_atk.php" method="POST">
                 <div class="modal-body">
                     <div class="row g-3">
                         <div class="col-lg-6">
@@ -107,18 +107,18 @@
                 <h5 class="modal-title" id="exampleModalLabel">Edit ATK</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-edit-modal"></button>
             </div>
-            <form action="" method="POST">
+            <form action="function/insert_atk.php" method="POST">
                 <div class="modal-body">
                     <div class="row g-3">
                         <div class="col-lg-6">
                             <div id="modal-id">
                                 <label for="choices-status-input" class="form-label">ID ATK</label>
-                                <input type="text" class="form-control" name="id" value="">
+                                <input type="text" class="form-control" name="id_atk" value="">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <label for="choices-status-input" class="form-label">Description</label>
-                            <input type="text" class="form-control" name="desc" value="">
+                            <input type="text" class="form-control" name="description" value="">
                         </div>
                     </div>
                 </div>
